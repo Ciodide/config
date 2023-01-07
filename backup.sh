@@ -11,13 +11,13 @@ backup () {
 }
 
 #Emacs: $HOME/.emacs.d
-echo "Backing up Emacs config file(s)..."
+echo "Backing up Emacs config file(s) ..."
 backup "$HOME/.emacs.d" \
        "emacs" \
        "init.el elisp theme"
 
 #Alacritty: $HOME/.config/alacritty/alacritty.yml 
-echo "Backing up Alacritty config file(s)..."
+echo "Backing up Alacritty config file(s) ..."
 backup "$HOME/.config/alacritty" \
        "alacritty" \
        "alacritty.yml"
@@ -32,3 +32,9 @@ backup "/usr/share/libalpm/scripts" \
        "libalpm/scripts" \
        "mkinitcpio-sign"
 
+### Xorg Server related
+# xinit
+echo "Backing up startx(xinit) script(s) ..."
+backup "$HOME" \
+       "xinit" \
+       ".xinitrc"
