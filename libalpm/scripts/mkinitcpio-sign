@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+echo "Signing all file(s) in /boot ..."
+rm -f /boot/*.sig
+for f in /boot/*; do
+    /usr/bin/gpg --homedir /root/murfan/grub_sign_key --passphrase-file /root/murfan/grub_sign_key/gpg-keyfile \
+		 --pinentry-mode loopback --detach-sign $f
+done
+chmod 600 /boot/*.sig

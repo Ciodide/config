@@ -22,4 +22,13 @@ backup "$HOME/.config/alacritty" \
        "alacritty" \
        "alacritty.yml"
 
+#libalpm (pacman): /usr/share/libalpm
+echo "Backing up libalpm (pacman) hook(s) ..."
+backup "/usr/share/libalpm/hooks" \
+       "libalpm/hooks" \
+       "91-mkinitcpio-sign.hook"
+echo "Backing up libalpm (pacman) script(s) ..."
+backup "/usr/share/libalpm/scripts" \
+       "libalpm/scripts" \
+       "mkinitcpio-sign"
 
