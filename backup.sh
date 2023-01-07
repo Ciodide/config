@@ -50,3 +50,9 @@ echo "Backing up gtk3 config file(s) ..."
 backup "$HOME/.config/gtk-3.0" \
        "gtk/gtk3" \
        "settings.ini"
+
+#Xmonad: $HOME/.xmonad/
+echo "Backing up xmonad config file(s)..."
+backup "$HOME/.xmonad/" \
+       "xmonad" \
+       "xmonad.hs"
