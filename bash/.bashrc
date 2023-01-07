@@ -7,6 +7,8 @@
 
 alias ls='ls --color=auto'
 PS1='\e[1;95mλ\e[0;93m\h \e[0m\w\n\u> '
+# root PS1
+#PS1='\e[1;31mλ\e[0;95m\h \e[0m\w\nYUKI.N> '
 
 ## Bash
 # history
