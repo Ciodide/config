@@ -38,3 +38,15 @@ echo "Backing up startx(xinit) script(s) ..."
 backup "$HOME" \
        "xinit" \
        ".xinitrc"
+
+# GTK
+# gtk2: $HOME/.gtkrc-2.0
+echo "Backing up gtk2 config file(s) ..."
+backup "$HOME" \
+       "gtk/gtk2" \
+       ".gtkrc-2.0" 
+# gtk3: $HOME/.config/gtk-3.0/settings.ini
+echo "Backing up gtk3 config file(s) ..."
+backup "$HOME/.config/gtk-3.0" \
+       "gtk/gtk3" \
+       "settings.ini"
