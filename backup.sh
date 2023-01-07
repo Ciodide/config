@@ -32,6 +32,12 @@ backup "/usr/share/libalpm/scripts" \
        "libalpm/scripts" \
        "mkinitcpio-sign"
 
+# Bash: $HOME/.bash_profile $HOME/.bashrc
+echo "Backing up bash script(s) ..."
+backup "$HOME" \
+       "bash" \
+       ".bash_profile .bashrc"
+
 ### Xorg Server related
 # xinit
 echo "Backing up startx(xinit) script(s) ..."
