@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: org-latex-inline-equ
+# key: ieq
+# binding: ￥
+# --
+\\( $1 \\) $0

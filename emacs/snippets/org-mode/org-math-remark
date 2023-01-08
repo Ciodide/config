@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-remark
+# key: remark
+# --
+#+begin_remark
+$0
+#+end_remark

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-case
+# key: cas
+# --
+#+begin_case
+$0
+#+end_case

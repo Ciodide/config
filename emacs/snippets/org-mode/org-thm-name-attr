@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-thm-name-attr
+# key: tna
+# --
+#+ATTR_HTML: :name $1
+#+ATTR_LATEX: :options [$1]
+$0

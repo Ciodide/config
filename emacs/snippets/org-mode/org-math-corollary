@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-corollary
+# key: cly
+# --
+#+begin_corollary
+$0
+#+end_corollary

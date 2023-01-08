@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-latex-Bmatrix
+# key: Bmx
+# --
+\begin{Bmatrix}
+$0
+\end{Bmatrix}

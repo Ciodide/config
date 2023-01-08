@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-conjecture
+# key: cjt
+# --
+#+begin_conjecture
+$0
+#+end_conjecture

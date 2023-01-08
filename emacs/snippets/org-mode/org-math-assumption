@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-assumption
+# key: ass
+# --
+#+begin_assumption
+$0
+#+end_assumption

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-algo
+# key: alg
+# --
+#+begin_algo
+$0
+#+end_alog

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-propert
+# key: ppt
+# --
+#+begin_propert
+$0
+#+end_propert

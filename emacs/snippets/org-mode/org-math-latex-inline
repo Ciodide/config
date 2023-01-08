@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: org-math-latex-inline
+# key: ￥
+# binding: ￥
+# --
+\\( $0 \\)

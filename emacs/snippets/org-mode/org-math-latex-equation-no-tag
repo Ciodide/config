@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-latex-equation-no-tag
+# key: eqn
+# --
+\begin{equation*}
+$0
+\end{equation*}

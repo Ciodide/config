@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-axiom
+# key: axm
+# --
+#+begin_axiom
+$0
+#+end_axiom

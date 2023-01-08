@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-latex-matrix
+# key: mtx
+# --
+\begin{matrix}
+$0
+\end{matrix}

@@ -15,7 +15,7 @@ backup () {
 echo "Backing up Emacs config file(s) ..."
 backup "$HOME/.emacs.d" \
        "emacs" \
-       "init.el elisp theme"
+       "init.el elisp theme snippets"
 
 #Alacritty: $HOME/.config/alacritty/alacritty.yml 
 echo "Backing up Alacritty config file(s) ..."

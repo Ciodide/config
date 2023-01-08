@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org-math-example
+# key: exp
+# --
+#+begin_exap
+$0
+#+end_exap
