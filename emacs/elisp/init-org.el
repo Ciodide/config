@@ -6,16 +6,20 @@
    ;; LaTeX
    org-format-latex-options (plist-put org-format-latex-options
 				       :scale 1.4)
-   org-format-latex-options (plist-put org-format-latex-options
-				       :background '"Transparent")
+   ;; org-format-latex-options (plist-put org-format-latex-options
+   ;; 				       :background '"Transparent")
    org-latex-packages-alist '(("" "mathrsfs" t)
 			      ("" "amsthm" t))
    org-preview-latex-default-process 'dvisvgm
-   org-latex-compiler '"xelatex"
-   org-latex-default-class '"ctexart"
+   ;; org-latex-compiler '"xelatex"
+   org-latex-pdf-process (list "latexmk -pdf -bibtex %f")
+   ;; org-latex-default-class '"ctexart"
+   org-latex-default-class '"article"
+   
    )
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
-  :hook (org-mode . org-indent-mode)
+  :hook ((org-mode . org-indent-mode)
+	 (org-mode . turn-on-org-cdlatex))
   )
 
 (use-package ox-latex
@@ -35,4 +39,46 @@
 
   )
 
+(use-package ox-publish
+  :config
+  (setq org-publish-project-alist
+	'(("blogs-org"
+	   :base-directory "~/documents/public/blogs/"
+	   :base-extension "org"
+	   :publishing-directory "~/documents/public/publications/blogs"
+	   :recursive t
+	   :publishing-function org-html-publish-to-html
+	   )
+	  ("blogs-static"
+	   :base-directory "~/documents/public/blogs/"
+	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
+	   :publishing-directory "~/documents/public/publications/blogs"
+	   :recursive t
+	   :publishing-function org-publish-attachment
+	   )
+	  ("blogs" :components ("blogs-org" "blogs-static"))
+	  ("notes-org"
+	   :base-directory "~/documents/public/notes"
+	   :base-extension "org"
+	   :publishing-directory "~/documents/public/publications/notes"
+	   :recursive t
+	   :publishing-function org-html-publish-to-html
+	   )
+	  ("notes-static"
+	   :base-directory "~/documents/public/notes"
+	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
+	   :publishing-directory "~/documents/public/publications/notes"
+	   :recursive t
+	   :publishing-function org-publish-attachment
+	   )
+	  ("notes" :components ("notes-org" "notes-static"))
+	  ("templates"
+	   :base-directory "~/documents/public/templates"
+	   :base-extension "org\\|css\\|js\\|"
+	   :publishing-directory "~/documents/public/publications/templates"
+	   :recursive t
+	   :publishing-function org-publish-attachment
+	   )
+	  ("all" :components ("blogs" "notes" "templates"))
+	  )))
 (provide 'init-org)
