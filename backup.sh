@@ -1,10 +1,11 @@
 #!/bin/bash
+dst="$HOME/codes/public_config"
 
 backup () {
     config_dir="$1"
-    backup_dir="$2"
+    backup_dir="$dst/$2"
     file_list="$3"
-    mkdir -p $backup_dir
+    mkdir -p $dst/$backup_dir
     for file in $file_list; do
 	cp -r $config_dir/$file $backup_dir/
     done
