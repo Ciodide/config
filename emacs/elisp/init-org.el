@@ -23,7 +23,7 @@
    '((emacs-lisp . t)
      (haskell . t)))
   ;; DANGEROUS: Disable confirmation before evaluation source code block
-  (setq org-confirm-babel-evaluate nil)
+  ;; (setq org-confirm-babel-evaluate nil)
 
   :hook ((org-mode . org-indent-mode)
 	 (org-mode . turn-on-org-cdlatex))
