@@ -45,14 +45,14 @@
 	'(("blogs-org"
 	   :base-directory "~/documents/public/blogs/"
 	   :base-extension "org"
-	   :publishing-directory "~/documents/public/publications/blogs"
+	   :publishing-directory "/tmp/publications/blogs"
 	   :recursive t
 	   :publishing-function org-html-publish-to-html
 	   )
 	  ("blogs-static"
 	   :base-directory "~/documents/public/blogs/"
 	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
-	   :publishing-directory "~/documents/public/publications/blogs"
+	   :publishing-directory "/tmp/publications/blogs"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
@@ -60,14 +60,14 @@
 	  ("notes-org"
 	   :base-directory "~/documents/public/notes"
 	   :base-extension "org"
-	   :publishing-directory "~/documents/public/publications/notes"
+	   :publishing-directory "/tmp/publications/notes"
 	   :recursive t
 	   :publishing-function org-html-publish-to-html
 	   )
 	  ("notes-static"
 	   :base-directory "~/documents/public/notes"
 	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
-	   :publishing-directory "~/documents/public/publications/notes"
+	   :publishing-directory "/tmp/publications/notes"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
@@ -75,7 +75,7 @@
 	  ("templates"
 	   :base-directory "~/documents/public/templates"
 	   :base-extension "org\\|css\\|js\\|"
-	   :publishing-directory "~/documents/public/publications/templates"
+	   :publishing-directory "/tmp/publications/templates"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
