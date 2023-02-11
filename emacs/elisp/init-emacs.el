@@ -8,14 +8,14 @@
   (menu-bar-mode -1)
   (delete-selection-mode t)
   (global-auto-revert-mode)
-  (setq tab-width 4
-	make-backup-files t
-	auto-save-default nil
-	auto-revert-interval 1
-	backup-by-copying-when-linked 1
-	truncate-lines t
-	backup-directory-alist '(("." . "/tmp/emacs_backup"))
-	)
+  (setq tab-width 2
+				make-backup-files t
+				auto-save-default nil
+				auto-revert-interval 1
+				backup-by-copying-when-linked 1
+				truncate-lines t
+				backup-directory-alist '(("." . "/tmp/emacs_backup"))
+				)
   )
 
 ;;(global-hl-line-mode 1
@@ -33,7 +33,7 @@
   :init (recentf-mode 1)
   :config
   (setq recentf-max-menu-items 25
-		recentf-max-saved-items 25)
+				recentf-max-saved-items 25)
   :bind ("C-x C-r" . recentf-open-files)
   )
 
