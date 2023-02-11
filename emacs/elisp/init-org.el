@@ -18,6 +18,13 @@
    
    )
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (haskell . t)))
+  ;; DANGEROUS: Disable confirmation before evaluation source code block
+  (setq org-confirm-babel-evaluate nil)
+
   :hook ((org-mode . org-indent-mode)
 	 (org-mode . turn-on-org-cdlatex))
   )
