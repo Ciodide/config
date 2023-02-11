@@ -48,3 +48,5 @@
 ;;(require 'init-org-cdlatex)
 ;; -- Python Mode --
 ;;(require 'init-ein)
+;; -- Haskell Mode --
+;;(require 'init-haskell)
