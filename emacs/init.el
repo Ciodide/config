@@ -50,3 +50,5 @@
 ;;(require 'init-ein)
 ;; -- Haskell Mode --
 ;;(require 'init-haskell)
+;; -- HTML --
+;;(require 'init-htmlize)
