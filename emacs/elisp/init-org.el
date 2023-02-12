@@ -23,7 +23,7 @@
    '((emacs-lisp . t)
      (haskell . t)))
   ;; DANGEROUS: Disable confirmation before evaluation source code block
-  ;; (setq org-confirm-babel-evaluate nil)
+  (setq org-confirm-babel-evaluate nil)
 
   :hook ((org-mode . org-indent-mode)
 	 (org-mode . turn-on-org-cdlatex))
@@ -52,14 +52,14 @@
 	'(("blogs-org"
 	   :base-directory "~/documents/public/blogs/"
 	   :base-extension "org"
-	   :publishing-directory "/tmp/publications/blogs"
+	   :publishing-directory "~/share/publications/blogs"
 	   :recursive t
 	   :publishing-function org-html-publish-to-html
 	   )
 	  ("blogs-static"
 	   :base-directory "~/documents/public/blogs/"
 	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
-	   :publishing-directory "/tmp/publications/blogs"
+	   :publishing-directory "~/share/publications/blogs"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
@@ -67,14 +67,14 @@
 	  ("notes-org"
 	   :base-directory "~/documents/public/notes"
 	   :base-extension "org"
-	   :publishing-directory "/tmp/publications/notes"
+	   :publishing-directory "~/share/publications/notes"
 	   :recursive t
 	   :publishing-function org-html-publish-to-html
 	   )
 	  ("notes-static"
 	   :base-directory "~/documents/public/notes"
 	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
-	   :publishing-directory "/tmp/publications/notes"
+	   :publishing-directory "~/share/publications/notes"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
@@ -82,7 +82,7 @@
 	  ("templates"
 	   :base-directory "~/documents/public/templates"
 	   :base-extension "org\\|css\\|js\\|"
-	   :publishing-directory "/tmp/publications/templates"
+	   :publishing-directory "~/share/publications/templates"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
