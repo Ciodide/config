@@ -58,12 +58,21 @@
 	   )
 	  ("blogs-static"
 	   :base-directory "~/documents/public/blogs/"
-	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
+	   :base-extension "png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
 	   :publishing-directory "~/share/publications/blogs"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
-	  ("blogs" :components ("blogs-org" "blogs-static"))
+	  ("blogs-templates"
+	   :base-directory "~/documents/public/templates"
+	   :base-extension "css\\|js\\|"
+	   :publishing-directory "~/share/publications/blogs/templates"
+	   :recursive t
+	   :publishing-function org-publish-attachment
+	   )
+	  ("blogs" :components ("blogs-org"
+				"blogs-static"
+				"blogs-templates"))
 	  ("notes-org"
 	   :base-directory "~/documents/public/notes"
 	   :base-extension "org"
@@ -73,19 +82,22 @@
 	   )
 	  ("notes-static"
 	   :base-directory "~/documents/public/notes"
-	   :base-extension "org\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
+	   :base-extension "png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
 	   :publishing-directory "~/share/publications/notes"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
-	  ("notes" :components ("notes-org" "notes-static"))
-	  ("templates"
+	  ("notes-templates"
 	   :base-directory "~/documents/public/templates"
-	   :base-extension "org\\|css\\|js\\|"
-	   :publishing-directory "~/share/publications/templates"
+	   :base-extension "css\\|js\\|"
+	   :publishing-directory "~/share/publications/notes/templates"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
-	  ("all" :components ("blogs" "notes" "templates"))
+	  ("notes" :components ("notes-org"
+				"notes-static"
+				"notes-templates"))
+	  
+	  ("all" :components ("blogs" "notes"))
 	  )))
 (provide 'init-org)
