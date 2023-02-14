@@ -9,10 +9,11 @@
    ;; org-format-latex-options (plist-put org-format-latex-options
    ;; 				       :background '"Transparent")
    org-latex-packages-alist '(("" "mathrsfs" t)
-			      ("" "amsthm" t))
+			      ("" "amsthm" t)
+			      ("" "ctex" t))
    org-preview-latex-default-process 'dvisvgm
    ;; org-latex-compiler '"xelatex"
-   org-latex-pdf-process (list "latexmk -pdf -bibtex %f")
+   org-latex-pdf-process (list "latexmk -pdflatex='xelatex -shell-escape -interaction nonstopmode' -pdf -bibtex -output-directory=%o %f")
    ;; org-latex-default-class '"ctexart"
    org-latex-default-class '"article"
    
@@ -49,40 +50,55 @@
 (use-package ox-publish
   :config
   (setq org-publish-project-alist
-	'(("blogs-org"
+	'(("blogs-org-html"
 	   :base-directory "~/documents/public/blogs/"
 	   :base-extension "org"
-	   :publishing-directory "~/share/publications/blogs"
+	   :publishing-directory "~/documents/public/blogs/"
 	   :recursive t
 	   :publishing-function org-html-publish-to-html
 	   )
+	  ("blogs-org-pdf"
+	   :base-directory "~/documents/public/blogs/"
+	   :base-extension "org"
+	   :publishing-directory "~/documents/public/blogs/"
+	   :recursive t
+	   :publishing-function org-latex-publish-to-pdf
+	   )
 	  ("blogs-static"
 	   :base-directory "~/documents/public/blogs/"
-	   :base-extension "png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
+	   :base-extension "org\\|html\\|pdf\\|png\\|jpg\\|gif\\|mp3\\|ogg"
 	   :publishing-directory "~/share/publications/blogs"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
 	  ("blogs-templates"
 	   :base-directory "~/documents/public/templates"
-	   :base-extension "css\\|js\\|"
+	   :base-extension "css\\|js"
 	   :publishing-directory "~/share/publications/blogs/templates"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
-	  ("blogs" :components ("blogs-org"
+	  ("blogs" :components ("blogs-org-html"
+				"blogs-org-pdf"
 				"blogs-static"
 				"blogs-templates"))
-	  ("notes-org"
+	  ("notes-org-html"
 	   :base-directory "~/documents/public/notes"
 	   :base-extension "org"
-	   :publishing-directory "~/share/publications/notes"
+	   :publishing-directory "~/documents/public/notes"
 	   :recursive t
 	   :publishing-function org-html-publish-to-html
 	   )
+	  ("notes-org-pdf"
+	   :base-directory "~/documents/public/notes"
+	   :base-extension "org"
+	   :publishing-directory "~/documents/public/notes"
+	   :recursive t
+	   :publishing-function org-latex-publish-to-pdf
+	   )
 	  ("notes-static"
 	   :base-directory "~/documents/public/notes"
-	   :base-extension "png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg"
+	   :base-extension "org\\|html\\|pdf\\|png\\|jpg\\|gif\\|mp3\\|ogg"
 	   :publishing-directory "~/share/publications/notes"
 	   :recursive t
 	   :publishing-function org-publish-attachment
@@ -94,7 +110,8 @@
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
-	  ("notes" :components ("notes-org"
+	  ("notes" :components ("notes-org-html"
+				"notes-org-pdf"
 				"notes-static"
 				"notes-templates"))
 	  
