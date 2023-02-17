@@ -10,13 +10,14 @@
    ;; 				       :background '"Transparent")
    org-latex-packages-alist '(("" "mathrsfs" t)
 			      ("" "amsthm" t)
-			      ("" "ctex" t))
+			      ("" "ctex" t)
+			      ("" "minted" t))
    org-preview-latex-default-process 'dvisvgm
    ;; org-latex-compiler '"xelatex"
-   org-latex-pdf-process (list "latexmk -pdflatex='xelatex -shell-escape -interaction nonstopmode' -pdf -bibtex -output-directory=%o %f")
+   org-latex-pdf-process (list "latexmk -pdflatex='xelatex -shell-escape -interaction nonstopmode -8bit' -pdf -bibtex -output-directory=%o %f")
    ;; org-latex-default-class '"ctexart"
    org-latex-default-class '"article"
-   
+   org-latex-listings 'minted
    )
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
   (org-babel-do-load-languages
