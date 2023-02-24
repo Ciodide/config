@@ -18,6 +18,8 @@
    ;; org-latex-default-class '"ctexart"
    org-latex-default-class '"article"
    org-latex-listings 'minted
+   org-latex-minted-options '(("frame" "lines")
+			      ("linenos=true"))
    )
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
   (org-babel-do-load-languages
