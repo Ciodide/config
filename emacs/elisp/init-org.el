@@ -67,10 +67,19 @@
 	   :recursive t
 	   :publishing-function org-latex-publish-to-pdf
 	   )
+	  ("blogs-main"
+	   :base-directory "~/documents/public/blogs/"
+	   :base-extension "org\\|html\\|tex\\|pdf"
+	   :publishing-directory "~/share/publications/blogs"
+	   :exclude ".*/_.*"
+	   :recursive t
+	   :publishing-function org-publish-attachment
+	   )
 	  ("blogs-static"
 	   :base-directory "~/documents/public/blogs/"
-	   :base-extension "org\\|html\\|pdf\\|png\\|jpg\\|gif\\|mp3\\|ogg"
+	   :base-extension "png\\|jpg\\|gif\\|mp3\\|ogg"
 	   :publishing-directory "~/share/publications/blogs"
+	   :exclude ".*/ltximg"
 	   :recursive t
 	   :publishing-function org-publish-attachment
 	   )
@@ -83,6 +92,7 @@
 	   )
 	  ("blogs" :components ("blogs-org-html"
 				"blogs-org-pdf"
+				"blogs-main"
 				"blogs-static"
 				"blogs-templates"))
 	  ("notes-org-html"
@@ -99,11 +109,20 @@
 	   :recursive t
 	   :publishing-function org-latex-publish-to-pdf
 	   )
+	  ("notes-main"
+	   :base-directory "~/documents/public/notes/"
+	   :base-extension "org\\|html\\|tex\\|pdf"
+	   :publishing-directory "~/share/publications/notes"
+	   :exclude ".*/_.*"
+	   :recursive t
+	   :publishing-function org-publish-attachment
+	   )
 	  ("notes-static"
 	   :base-directory "~/documents/public/notes"
-	   :base-extension "org\\|html\\|pdf\\|png\\|jpg\\|gif\\|mp3\\|ogg"
+	   :base-extension "png\\|jpg\\|gif\\|mp3\\|ogg"
 	   :publishing-directory "~/share/publications/notes"
 	   :recursive t
+	   :exclude ".*/ltximg"
 	   :publishing-function org-publish-attachment
 	   )
 	  ("notes-templates"
@@ -115,6 +134,7 @@
 	   )
 	  ("notes" :components ("notes-org-html"
 				"notes-org-pdf"
+				"notes-main"
 				"notes-static"
 				"notes-templates"))
 	  

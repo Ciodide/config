@@ -8,6 +8,7 @@
   (menu-bar-mode -1)
   (delete-selection-mode t)
   (global-auto-revert-mode)
+  (desktop-save-mode t)
   (setq tab-width 2
 				make-backup-files t
 				auto-save-default nil

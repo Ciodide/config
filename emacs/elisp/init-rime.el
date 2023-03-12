@@ -7,7 +7,7 @@
    rime-show-candidate 'posframe
    rime-posframe-style 'vertical
    rime-show-preedit 'inline
-   rime-disable-predicate '(rime-predicate-org-latex-mode-p
+   rime-disable-predicates '(rime-predicate-org-latex-mode-p
 			    rime-predicate-org-in-src-block-p
 			    ;;rime-predicate-prog-in-code-p
 			    rime-predicate-tex-math-or-command-p

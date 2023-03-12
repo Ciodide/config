@@ -2,4 +2,4 @@
   :ensure htmlize
   )
 
-provide 'init-htmlize)
+(provide 'init-htmlize)
